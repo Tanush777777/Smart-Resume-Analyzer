@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Analysis - Smart Resume Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="page-nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <i class="fas fa-file-alt"></i>
+                <span>Smart Resume Analyzer</span>
+            </a>
+            <div class="nav-links">
+                <a href="/" class="nav-link">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="/templates" class="nav-link">
+                    <i class="fas fa-file-alt"></i> Templates
+                </a>
+                <a href="/jobs" class="nav-link">
+                    <i class="fas fa-briefcase"></i> Jobs
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="section-pill">Resume Analysis</div>
+                <h2>Analyze & Elevate Your Resume</h2>
+                <p class="tagline">Upload your resume, get instant AI analysis, and download a polished report.</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Upload Section -->
+            <section class="upload-section" id="uploadSection">
+                <div class="upload-card">
+                    <div class="upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h2>Upload Your Resume</h2>
+                    <p class="upload-description">Get instant AI-powered analysis of your resume</p>
+                    
+                    <form id="uploadForm" class="upload-form">
+                        <div class="file-input-wrapper">
+                            <input type="file" id="fileInput" accept=".pdf,.docx,.txt" required>
+                            <label for="fileInput" class="file-label">
+                                <i class="fas fa-folder-open"></i>
+                                <span>Choose File</span>
+                            </label>
+                        </div>
+                        <button type="submit" class="analyze-btn" id="analyzeBtn">
+                            <i class="fas fa-magic"></i>
+                            Analyze Resume
+                        </button>
+                    </form>
+                    
+                    <div class="file-info" id="fileInfo" style="display: none;">
+                        <i class="fas fa-file"></i>
+                        <span id="fileName"></span>
+                    </div>
+                    
+                    <p class="supported-formats">Supported formats: PDF, DOCX, TXT</p>
+                </div>
+            </section>
+
+            <!-- Loading Section -->
+            <section class="loading-section" id="loadingSection" style="display: none;">
+                <div class="loader">
+                    <div class="spinner"></div>
+                    <p>Analyzing your resume with AI...</p>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <!-- ATS Score Card -->
+                <div class="score-card">
+                    <div class="score-header">
+                        <h2><i class="fas fa-chart-line"></i> ATS Compatibility Score</h2>
+                    </div>
+                    <div class="score-display">
+                        <div class="score-circle">
+                            <svg class="score-svg">
+                                <circle class="score-bg" cx="100" cy="100" r="90"></circle>
+                                <circle class="score-progress" id="scoreProgress" cx="100" cy="100" r="90"></circle>
+                            </svg>
+                            <div class="score-text">
+                                <span id="atsScore">0</span>
+                                <span class="score-percent">%</span>
+                            </div>
+                        </div>
+                        <p class="score-description" id="scoreDescription"></p>
+                    </div>
+                </div>
+
+                <!-- Analysis Cards Grid -->
+                <div class="analysis-grid">
+                    <!-- Contact Information -->
+                    <div class="analysis-card">
+                        <div class="card-header">
+                            <i class="fas fa-address-card"></i>
+                            <h3>Contact Information</h3>
+                        </div>
+                        <div class="card-content" id="contactInfo">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Skills -->
+                    <div class="analysis-card">
+                        <div class="card-header">
+                            <i class="fas fa-tools"></i>
+                            <h3>Skills Detected</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="skills-list" id="skillsList">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience -->
+                    <div class="analysis-card">
+                        <div class="card-header">
+                            <i class="fas fa-briefcase"></i>
+                            <h3>Experience Analysis</h3>
+                        </div>
+                        <div class="card-content" id="experienceInfo">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="analysis-card">
+                        <div class="card-header">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h3>Education</h3>
+                        </div>
+                        <div class="card-content" id="educationInfo">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Sections Detected -->
+                    <div class="analysis-card">
+                        <div class="card-header">
+                            <i class="fas fa-list"></i>
+                            <h3>Sections Detected</h3>
+                        </div>
+                        <div class="card-content" id="sectionsInfo">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Statistics -->
+                    <div class="analysis-card">
+                        <div class="card-header">
+                            <i class="fas fa-chart-bar"></i>
+                            <h3>Resume Statistics</h3>
+                        </div>
+                        <div class="card-content" id="statisticsInfo">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Suggestions Section -->
+                <div class="suggestions-section">
+                    <h2><i class="fas fa-lightbulb"></i> AI-Powered Suggestions</h2>
+                    <div class="suggestions-list" id="suggestionsList">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="analyze-another">
+                    <button class="btn-download" id="downloadBtn" onclick="downloadReport()">
+                        <i class="fas fa-file-pdf"></i>
+                        Download PDF Report
+                    </button>
+                    <button class="btn-secondary" onclick="resetAnalysis()">
+                        <i class="fas fa-redo"></i>
+                        Analyze Another Resume
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
+
+

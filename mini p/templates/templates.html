@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Templates - Smart Resume Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="page-nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <i class="fas fa-file-alt"></i>
+                <span>Smart Resume Analyzer</span>
+            </a>
+            <div class="nav-links">
+                <a href="/" class="nav-link">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="/analysis" class="nav-link">
+                    <i class="fas fa-chart-line"></i> Analysis
+                </a>
+                <a href="/jobs" class="nav-link">
+                    <i class="fas fa-briefcase"></i> Jobs
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="section-pill">Resume Templates</div>
+                <h2>Curated Resume Templates</h2>
+                <p class="tagline">Choose from modern, ATS-friendly templates inspired by top performers. Customize them to tell your story.</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Templates Section -->
+            <section class="templates-showcase" id="templatesSection">
+                <div class="template-grid">
+                    <!-- Template 1: Modern Minimalist -->
+                    <div class="template-card template-modern">
+                        <div class="template-preview">
+                            <div class="preview-header modern-header">
+                                <div class="preview-accent modern-accent"></div>
+                                <div class="preview-content">
+                                    <div class="preview-name">JOHN DOE</div>
+                                    <div class="preview-title">Software Engineer</div>
+                                </div>
+                            </div>
+                            <div class="preview-body">
+                                <div class="preview-section">
+                                    <div class="preview-line"></div>
+                                    <div class="preview-line short"></div>
+                                </div>
+                                <div class="preview-section">
+                                    <div class="preview-line"></div>
+                                    <div class="preview-line short"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="template-info">
+                            <div class="template-header">
+                                <span class="template-label">Modern Minimalist</span>
+                                <span class="template-tag modern-tag">Trending</span>
+                            </div>
+                            <p class="template-desc">Clean, single-column design with subtle color accents. Perfect for tech professionals and modern industries.</p>
+                            <ul class="template-features">
+                                <li><i class="fas fa-check-circle"></i> ATS-optimized layout</li>
+                                <li><i class="fas fa-check-circle"></i> Modern typography</li>
+                                <li><i class="fas fa-check-circle"></i> Clean spacing</li>
+                                <li><i class="fas fa-check-circle"></i> Professional color scheme</li>
+                            </ul>
+                            <button class="template-btn modern-btn" onclick="openResumeBuilder('modern_minimalist')">
+                                <i class="fas fa-magic"></i> Use This Template
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Template 2: Professional Classic -->
+                    <div class="template-card template-classic">
+                        <div class="template-preview">
+                            <div class="preview-header classic-header">
+                                <div class="preview-sidebar classic-sidebar">
+                                    <div class="preview-circle"></div>
+                                    <div class="preview-line"></div>
+                                    <div class="preview-line short"></div>
+                                </div>
+                                <div class="preview-main classic-main">
+                                    <div class="preview-name classic-name">JOHN DOE</div>
+                                    <div class="preview-title classic-title">Software Engineer</div>
+                                    <div class="preview-section">
+                                        <div class="preview-line"></div>
+                                        <div class="preview-line short"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="template-info">
+                            <div class="template-header">
+                                <span class="template-label">Professional Classic</span>
+                                <span class="template-tag classic-tag">Best Seller</span>
+                            </div>
+                            <p class="template-desc">Two-column layout with sidebar. Traditional yet modern, ideal for corporate and executive roles.</p>
+                            <ul class="template-features">
+                                <li><i class="fas fa-check-circle"></i> Sidebar design</li>
+                                <li><i class="fas fa-check-circle"></i> Executive-friendly</li>
+                                <li><i class="fas fa-check-circle"></i> Maximum readability</li>
+                                <li><i class="fas fa-check-circle"></i> Corporate standard</li>
+                            </ul>
+                            <button class="template-btn classic-btn" onclick="openResumeBuilder('professional_classic')">
+                                <i class="fas fa-magic"></i> Use This Template
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Template 3: Creative Bold -->
+                    <div class="template-card template-creative">
+                        <div class="template-preview">
+                            <div class="preview-header creative-header">
+                                <div class="preview-block creative-block"></div>
+                                <div class="preview-content creative-content">
+                                    <div class="preview-name creative-name">JOHN DOE</div>
+                                    <div class="preview-title creative-title">Software Engineer</div>
+                                </div>
+                            </div>
+                            <div class="preview-body creative-body">
+                                <div class="preview-section creative-section">
+                                    <div class="preview-line bold"></div>
+                                    <div class="preview-line short"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="template-info">
+                            <div class="template-header">
+                                <span class="template-label">Creative Bold</span>
+                                <span class="template-tag creative-tag">New</span>
+                            </div>
+                            <p class="template-desc">Bold typography with color blocks. Stand out with this eye-catching design perfect for creative and design roles.</p>
+                            <ul class="template-features">
+                                <li><i class="fas fa-check-circle"></i> Bold typography</li>
+                                <li><i class="fas fa-check-circle"></i> Color accents</li>
+                                <li><i class="fas fa-check-circle"></i> Creative layout</li>
+                                <li><i class="fas fa-check-circle"></i> Eye-catching design</li>
+                            </ul>
+                            <button class="template-btn creative-btn" onclick="openResumeBuilder('creative_bold')">
+                                <i class="fas fa-magic"></i> Use This Template
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resume Builder Modal -->
+            <div class="resume-builder-modal" id="resumeBuilderModal" style="display: none;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2><i class="fas fa-file-alt"></i> Create Your Resume</h2>
+                        <button class="modal-close" onclick="closeResumeBuilder()">&times;</button>
+                    </div>
+                    <form id="resumeForm" class="resume-form">
+                        <input type="hidden" id="selectedTemplate" name="template_id">
+                        
+                        <div class="form-section">
+                            <h3><i class="fas fa-user"></i> Personal Information</h3>
+                            <div class="form-grid">
+                                <div class="form-field">
+                                    <label>Full Name *</label>
+                                    <input type="text" name="full_name" placeholder="John Doe" required>
+                                </div>
+                                <div class="form-field">
+                                    <label>Professional Title *</label>
+                                    <input type="text" name="title" placeholder="Software Engineer" required>
+                                </div>
+                                <div class="form-field">
+                                    <label>Email *</label>
+                                    <input type="email" name="email" placeholder="john.doe@email.com" required>
+                                </div>
+                                <div class="form-field">
+                                    <label>Phone</label>
+                                    <input type="text" name="phone" placeholder="+1 234 567 8900">
+                                </div>
+                                <div class="form-field">
+                                    <label>Location</label>
+                                    <input type="text" name="location" placeholder="New York, NY">
+                                </div>
+                            </div>
+                            
+                            <div class="form-field full" style="margin-top: 20px;">
+                                <label>Professional Experience *</label>
+                                <textarea name="experience" rows="8" placeholder="Enter your work experience in the following format:
+
+Software Engineer at Tech Corp
+Duration: Jan 2020 - Present | Location: Remote
+- Developed and maintained web applications using React and Node.js
+- Led a team of 5 developers and improved code quality by 30%
+- Implemented CI/CD pipelines reducing deployment time by 50%
+
+Software Developer at Tech Solutions
+Duration: Jun 2018 - Dec 2019 | Location: San Francisco, CA
+- Built RESTful APIs using Python and Flask
+- Collaborated with cross-functional teams on product features" required></textarea>
+                                <small>Format: Job Title at Company | Duration | Location | Bullet points for responsibilities (separate each job with a blank line)</small>
+                            </div>
+                            
+                            <div class="form-field full" style="margin-top: 20px;">
+                                <label>Education *</label>
+                                <textarea name="education" rows="5" placeholder="Enter your education in the following format:
+
+Bachelor of Science in Computer Science
+University Name | 2020 | GPA: 3.8
+
+Master of Business Administration
+Business School | 2022 | GPA: 3.9" required></textarea>
+                                <small>Format: Degree | School Name | Year | GPA (optional) - Separate each entry with a blank line</small>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3><i class="fas fa-file-alt"></i> Professional Summary</h3>
+                            <div class="form-field full">
+                                <label>Summary *</label>
+                                <textarea name="summary" rows="4" placeholder="Write a 2-3 sentence professional summary highlighting your key strengths and experience..." required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3><i class="fas fa-tools"></i> Skills</h3>
+                            <div class="form-field full">
+                                <label>Skills (comma separated) *</label>
+                                <input type="text" name="skills" placeholder="Python, JavaScript, React, Node.js, SQL" required>
+                                <small>Separate multiple skills with commas</small>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3><i class="fas fa-certificate"></i> Certifications</h3>
+                            <div class="form-field full">
+                                <label>Upload Certificate Files</label>
+                                <input type="file" name="certificates" id="certificatesInput" multiple accept=".pdf,.jpg,.jpeg,.png" style="padding: 10px; border: 2px dashed var(--border-color); border-radius: 10px; cursor: pointer; background: var(--bg-color);">
+                                <small>You can upload multiple certificate files (PDF, JPG, PNG). Max 5 files, 5MB each.</small>
+                                <div id="certificatesPreview" style="margin-top: 15px;"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3><i class="fas fa-link"></i> Additional Information</h3>
+                            <div class="form-field full">
+                                <label>Links (comma separated)</label>
+                                <input type="text" name="links" placeholder="linkedin.com/in/johndoe, github.com/johndoe">
+                                <small>Separate multiple links with commas</small>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-cancel" onclick="closeResumeBuilder()">Cancel</button>
+                            <button type="submit" class="btn-generate">
+                                <i class="fas fa-magic"></i> Generate Resume PDF
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
+
+

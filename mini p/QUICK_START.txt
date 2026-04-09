@@ -1,0 +1,36 @@
+========================================
+  HOW TO START THE SERVER
+========================================
+
+METHOD 1: Double-Click (Easiest)
+----------------------------------
+1. Double-click "START_SERVER.bat" file
+2. A black terminal window will open
+3. Wait for message: "Running on http://0.0.0.0:5000"
+4. Open browser: http://localhost:5000
+5. KEEP THE TERMINAL WINDOW OPEN!
+
+METHOD 2: Command Line
+-----------------------
+1. Open PowerShell in this folder
+2. Type: py app.py
+3. Press Enter
+4. Wait for: "Running on http://0.0.0.0:5000"
+5. Open browser: http://localhost:5000
+6. KEEP THE TERMINAL WINDOW OPEN!
+
+IMPORTANT:
+- The server MUST be running for the website to work
+- Keep the terminal window open while using the app
+- To stop: Press Ctrl+C in the terminal
+
+TROUBLESHOOTING:
+- If you see "port already in use": Close other terminal windows
+- If Python not found: Make sure Python is installed
+- If module errors: Run: py -m pip install -r requirements.txt
+
+========================================
+
+
+
+

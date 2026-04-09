@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Suggestions - Smart Resume Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="page-nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <i class="fas fa-file-alt"></i>
+                <span>Smart Resume Analyzer</span>
+            </a>
+            <div class="nav-links">
+                <a href="/" class="nav-link">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="/analysis" class="nav-link">
+                    <i class="fas fa-chart-line"></i> Analysis
+                </a>
+                <a href="/templates" class="nav-link">
+                    <i class="fas fa-file-alt"></i> Templates
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="section-pill">Job Suggestions</div>
+                <h2>AI-Powered Job Suggestions</h2>
+                <p class="tagline">Upload your resume and get personalized job recommendations based on your skills, experience, and career goals.</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Job Suggestion Upload Area -->
+            <section class="job-suggestion-section">
+                <div class="job-upload-container" id="jobUploadContainer">
+                    <div class="upload-area job-upload-area" id="jobUploadArea">
+                        <div class="upload-icon">
+                            <i class="fas fa-file-upload"></i>
+                        </div>
+                        <h3>Upload Your Resume for Job Matching</h3>
+                        <p>Drag and drop your resume here, or click to browse</p>
+                        <p class="upload-hint">Supports PDF, DOCX, and TXT files (Max 10MB)</p>
+                        <input type="file" id="jobResumeInput" accept=".pdf,.docx,.txt" style="display: none;">
+                        <button class="btn-upload" onclick="document.getElementById('jobResumeInput').click()">
+                            <i class="fas fa-cloud-upload-alt"></i> Choose File
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Job Suggestions Loading -->
+                <div class="job-loading" id="jobLoading" style="display: none;">
+                    <div class="loader">
+                        <div class="spinner"></div>
+                        <p>Analyzing your resume and finding the perfect job matches...</p>
+                    </div>
+                </div>
+
+                <!-- Job Suggestions Results -->
+                <div class="job-suggestions-results" id="jobSuggestionsResults" style="display: none;">
+                    <div class="results-header">
+                        <h3><i class="fas fa-briefcase"></i> Recommended Jobs for You</h3>
+                        <p class="match-summary" id="jobMatchSummary"></p>
+                    </div>
+                    <div class="job-suggestions-grid" id="jobSuggestionsGrid">
+                        <!-- Job cards will be populated here -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
+
+

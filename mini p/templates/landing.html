@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Resume Analyzer - Your Career Companion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="landing-container">
+        <!-- Navigation Bar -->
+        <nav class="landing-nav">
+            <div class="nav-wrapper">
+                <div class="nav-logo">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Smart Resume Analyzer</span>
+                </div>
+                <div class="nav-actions">
+                    <a href="#sections-grid" class="nav-cta-btn">
+                        <i class="fas fa-arrow-down"></i>
+                        Explore
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="landing-hero">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-sparkles"></i>
+                    <span>AI-Powered Resume Solutions</span>
+                </div>
+                <h1 class="hero-title">
+                    Transform Your Career Journey
+                    <span class="gradient-text">with Smart Resume Tools</span>
+                </h1>
+                <p class="hero-description">
+                    Analyze your resume, create stunning templates, and discover perfect job matches—all powered by intelligent AI technology.
+                </p>
+            </div>
+        </section>
+
+        <!-- Main Sections Grid -->
+        <section class="sections-grid" id="sections-grid">
+            <div class="section-card" onclick="navigateToSection('analysis')">
+                <div class="card-badge">Most Popular</div>
+                <div class="card-icon-wrapper">
+                    <div class="card-icon analysis-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                </div>
+                <h2 class="card-title">Resume Analysis</h2>
+                <p class="card-description">
+                    Get instant AI-powered analysis of your resume. Check ATS compatibility, identify missing skills, and receive personalized improvement suggestions.
+                </p>
+                <div class="card-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>ATS Score Analysis</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Skills Detection</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Smart Suggestions</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>PDF Report Download</span>
+                    </div>
+                </div>
+                <button class="card-button analysis-btn">
+                    <span>Analyze Resume</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="section-card" onclick="navigateToSection('templates')">
+                <div class="card-badge templates-badge">New</div>
+                <div class="card-icon-wrapper">
+                    <div class="card-icon templates-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                </div>
+                <h2 class="card-title">Resume Templates</h2>
+                <p class="card-description">
+                    Choose from premium, ATS-friendly resume templates. Create professional resumes in minutes with our easy-to-use builder.
+                </p>
+                <div class="card-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>3 Premium Templates</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>ATS-Optimized</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Instant PDF Download</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Easy Customization</span>
+                    </div>
+                </div>
+                <button class="card-button templates-btn">
+                    <span>Browse Templates</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="section-card" onclick="navigateToSection('jobs')">
+                <div class="card-badge jobs-badge">AI-Powered</div>
+                <div class="card-icon-wrapper">
+                    <div class="card-icon jobs-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                </div>
+                <h2 class="card-title">Job Suggestions</h2>
+                <p class="card-description">
+                    Upload your resume and get personalized job recommendations. Find roles that match your skills, experience, and career goals.
+                </p>
+                <div class="card-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>AI-Powered Matching</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>120+ Job Categories</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Match Score Analysis</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Company Insights</span>
+                    </div>
+                </div>
+                <button class="card-button jobs-btn">
+                    <span>Find Jobs</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section" id="features-section">
+            <h2 class="features-title">Why Choose Our Platform?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>AI-Powered</h3>
+                    <p>Advanced AI algorithms analyze and optimize your resume</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>ATS-Friendly</h3>
+                    <p>All templates are optimized for Applicant Tracking Systems</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Fast & Easy</h3>
+                    <p>Get results in seconds with our streamlined process</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-lock"></i>
+                    <h3>Secure & Private</h3>
+                    <p>Your data is processed securely and never stored</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        function navigateToSection(section) {
+            // Add smooth transition effect
+            document.body.style.opacity = '0.8';
+            setTimeout(() => {
+                window.location.href = `/${section}`;
+            }, 200);
+        }
+
+        // Smooth scrolling for anchor links
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && href.length > 1) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                });
+            });
+
+            // Add scroll animations
+            const cards = document.querySelectorAll('.section-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 100);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'all 0.6s ease-out';
+                observer.observe(card);
+            });
+
+            // Add fade-in animation for hero content
+            const heroContent = document.querySelector('.hero-content');
+            if (heroContent) {
+                heroContent.style.opacity = '0';
+                heroContent.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    heroContent.style.transition = 'all 0.8s ease-out';
+                    heroContent.style.opacity = '1';
+                    heroContent.style.transform = 'translateY(0)';
+                }, 100);
+            }
+        });
+    </script>
+</body>
+</html>
+
+
